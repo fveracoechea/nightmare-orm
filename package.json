@@ -1,0 +1,33 @@
+{
+  "name": "nightmare",
+  "version": "1.0.0",
+  "description": "Object-Relational Mapping for node.js and postgreSQL insisted on Eloquent from php",
+  "main": "lib/app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoVeracoechea/nightmare.git"
+  },
+  "keywords": [
+    "orm",
+    "postgresql",
+    "postgres",
+    "Object-Relational-Mapping",
+    "Node.js"
+  ],
+  "author": "Francisco Veracoechea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranciscoVeracoechea/nightmare/issues"
+  },
+  "homepage": "https://github.com/FranciscoVeracoechea/nightmare#readme",
+  "dependencies": {
+    "pg": "^7.4.3"
+  }
+}
