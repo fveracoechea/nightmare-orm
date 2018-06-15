@@ -1,5 +1,13 @@
-const Nightmare = require('./app');
-const pool = require('./../functions/getConnectionPool');
+const Nightmare = require('./../lib/app');
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'oxoftmed_myscout',
+  password: '1',
+  port: 5432
+});
 
 class profiles extends Nightmare {
   constructor(){

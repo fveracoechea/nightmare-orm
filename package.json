@@ -2,13 +2,13 @@
   "name": "nightmare",
   "version": "1.0.0",
   "description": "Object-Relational Mapping for node.js and postgreSQL insisted on Eloquent from php",
-  "main": "lib/app.js",
+  "main": "./lib/app.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./test/test.js"
   },
   "repository": {
     "type": "git",
