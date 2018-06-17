@@ -67,5 +67,8 @@ let hash = new Hastag();
 // pro.user().then(user => console.log(user));
 // vid.id = 1;
 // vid.comments().then(comments => console.log(comments));
-hash.id = 322;
-hash.videos(false, 'desc').then(videos => console.log(videos));
+
+
+// hash.id = 322;
+// hash.videos(false, 'desc').then(videos => console.log(videos));
+console.log(Comment.realScape('Alicia" DROP TABLE usuarios; SELECT * FROM datos WHERE nombre LIKE "% '));

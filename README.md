@@ -3,7 +3,7 @@ Object Relational Mapping for **Node.js** and **PostgreSQL** insisted on Eloquen
 
 
 ## Introduction:
-The Nightmare ORM  provides a simple implementation of object relational mapping, for working with your database. Each database table has a corresponding **Model** *(ECMAScript 6 class)* which is used to interact with that table. Models allow you to query for data in your tables, as well as insert and update new records into the table.
+The Nightmare ORM  provides a simple implementation of object relational mapping, for working with your database. Each database table has a corresponding **Model** *(ECMAScript 6 class)* which is used to interact with that table. Models allow you to query for data in your tables, as well as insert and update new records into the table. It is also safe because it prevents *SQL injection*.
 
 ## Installation
 - using npm:
