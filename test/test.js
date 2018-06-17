@@ -34,10 +34,10 @@ class Video extends Nightmare {
     super(pool, 'videos', data);
   }
 
-  async comments(instanceOf = Comment, sort = 'ASC'){
+  async comments(sort = 'ASC', instanceOf = Comment){
     return await this.hasMany(instanceOf, 'id', 'video_id', 'comments', sort);
   }
-  hashtags(instanceOf = Hastag, sort = 'ASC'){
+  hashtags(sort, instanceOf = Hastag){
     return this.belongsToMany(instanceOf, 'hashtag__videos', 'hashtags', 'video_id', 'hashtag_id', sort);
   }
 }
@@ -55,20 +55,27 @@ class Hastag extends Nightmare {
   constructor(data = false){
     super(pool, 'hashtags', data);
   }
-  videos(instanceOf = Video, sort = 'ASC'){
+  videos(sort, instanceOf = Video){
     return this.belongsToMany(instanceOf, 'hashtag__videos', 'videos', 'hashtag_id', 'video_id', sort);
   }
 }
 let vid = new Video();
 let com = new Comment();
 let hash = new Hastag();
+let pro = new Profiles();
 // let pro = new Profiles(), user = new User();
 // user.profile().then(profile => console.log(profile));
 // pro.user().then(user => console.log(user));
 // vid.id = 1;
 // vid.comments().then(comments => console.log(comments));
 
+// vid.find(12)
+// .then(video => video.hashtags(undefined, false))
+// .then(hashtags => console.log(hashtags));
 
-// hash.id = 322;
-// hash.videos(false, 'desc').then(videos => console.log(videos));
-console.log(Comment.realScape('Alicia" DROP TABLE usuarios; SELECT * FROM datos WHERE nombre LIKE "% '));
+
+(async ()=>{
+  await pro.find(100);
+  let affectedRows = await pro.delete();
+  console.log(affectedRows)
+})(); 
