@@ -75,7 +75,31 @@ let pro = new Profiles();
 
 
 (async ()=>{
-  await pro.find(100);
-  let affectedRows = await pro.delete();
-  console.log(affectedRows)
+  // await pro.find(100);
+  // let affectedRows = await pro.delete();
+  // console.log(affectedRows)
+
+  // pro
+  // .select('*')
+  // .join('videos', 'videos.user_id', 'profiles.id')
+  // .join('views', 'views.video_id', 'videos.id')
+  // .where({ 
+  //   profiles: {
+  //     id:1, 
+  //     asd:'asd'
+  //   },
+  //   videos: {
+  //     profile_id: 2
+  //   }
+  // })
+  // .orderBy('user_id', 'desc')
+  // .limit(12)
+  // .execute();
+  let hashtaghs = await hash.select('hashtags.*')
+  .join('hashtag__videos', 'hashtag__videos.hashtag_id', 'hashtags.id')
+  .join('videos', 'hashtag__videos.video_id', 'videos.id')
+  .where({ videos: { id: 2 } })
+  .orderBy('id', 'desc')
+  .execute();
+  console.log(hashtaghs)
 })(); 
