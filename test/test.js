@@ -70,9 +70,10 @@ let pro = new Profiles();
 // vid.comments().then(comments => console.log(comments));
 
 vid.find(12)
-.then(video => {
-  console.log(video.toJson())
-  return video.hashtags()
+.then(async video => {
+  // console.log(video.toJson())
+  let result = await video.save();
+  console.log(result)
 })
 .then(hashtags => console.log(hashtags));
 
