@@ -42,8 +42,11 @@ const pool = new Pool({
 class Profiles extends Nightmare {
   constructor(data = false){
     super(pool, 'profiles', data);
+    this.fillable = [
+      'fullname', 'age', 'description'
+    ];
   }
-
+  
   //...
 }
 
