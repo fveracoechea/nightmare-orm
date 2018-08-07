@@ -88,19 +88,17 @@ let pro = new Profiles();
   //                   .execute();
   try {
     let vid = new Video();
-    vid = await vid.find(2);
-    // console.log(vid.toJson())
-    let res = await vid.hashtags()
+    let res = await vid
+      .select('id')
+      .where('asd', {hola: 'asdasd'}, '!=')
+      .where('id', 176, '!=')
+      .where('id', 175, '!=')
+      .limit(3)
+      .offset(3)
+      .orderBy('id', 'desc')
+      .execute();
     console.log(res);
   } catch (error) {
     console.error(error);
   }
-  // let hashtaghs = await 
-  // hash.select('hashtags.*')
-  // .join('hashtag__videos', 'hashtag__videos.hashtag_id', 'hashtags.id')
-  // .join('videos', 'hashtag__videos.video_id', 'videos.id')
-  // .where({ videos: { id: 2 } })
-  // .orderBy('id', 'desc')
-  // .execute();
-  // console.log(hashtaghs)
 })(); 
