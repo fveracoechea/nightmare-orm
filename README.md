@@ -184,13 +184,13 @@ chat.content = {
     { text: 'hello', user: 1 },
     { text: 'world', user: 7 }
   ],
-  acountant: 2
+  messageCounter: 2
 };
 await chat.save();
 
 const chatToUpdate = await chat.find(1);
 chatToUpdate.content.messages.push({ text: 'yeah!', user: 6 });
-chatToUpdate.acountant += 1;
+chatToUpdate.messageCounter += 1;
 await chatToUpdate.save();
 ```
 
