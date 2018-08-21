@@ -156,5 +156,43 @@ const data = await user
 ```
 *if the operator is equal ("=") this parameter can be omitted*
 
+## JSON and JSONB
+
+### toJson()
+You can get the data of an instance in json format using the *toJson* method, and thus leave aside all the information of methods and properties that the instance contains:
+```js
+let user = new User();
+user = await user.find(2);
+user = user.toJson();
+```
+
+### Inserting literal objects
+If we have the chats table, which is structured as follows:
+|       chat |               |
+|-----------:|---------------|
+| id         | int           |
+| created_at | timestamp     |
+| content    | jsonb or json |
+
+generate a javascript object I have installed it directly in an orm query:
+```js
+const newChat = new Chat();
+chat.created_at = '2004-10-19 10:23:54';
+chat.content = {
+  users: [1, 7, 6],
+  messages: [
+    { text: 'hello', user: 1 },
+    { text: 'world', user: 7 }
+  ],
+  acountant: 2
+};
+await chat.save();
+
+const chatToUpdate = await chat.find(1);
+chatToUpdate.content.messages.push({ text: 'yeah!', user: 6 });
+chatToUpdate.acountant += 1;
+await chatToUpdate.save();
+```
+
 -------
 *the documentation is not yet ready, we are working on it*
