@@ -166,7 +166,7 @@ user = await user.find(2);
 user = user.toJson();
 ```
 
-### Inserting literal objects
+### Using literal objects
 If we have the chats table, which is structured as follows:
 |       chat |               |
 |-----------:|---------------|
