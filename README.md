@@ -177,8 +177,8 @@ If we have the chats table, which is structured as follows:
 generate a javascript object I have installed it directly in an orm query:
 ```js
 const newChat = new Chat();
-chat.created_at = '2004-10-19 10:23:54';
-chat.content = {
+newChat.created_at = '2004-10-19 10:23:54';
+newChat.content = {
   users: [1, 7, 6],
   messages: [
     { text: 'hello', user: 1 },
@@ -186,11 +186,11 @@ chat.content = {
   ],
   messageCounter: 2
 };
-await chat.save();
+await newChat.save();
 
 const chatToUpdate = await chat.find(1);
 chatToUpdate.content.messages.push({ text: 'yeah!', user: 6 });
-chatToUpdate.messageCounter += 1;
+chatToUpdate.content.messageCounter += 1;
 await chatToUpdate.save();
 ```
 
